@@ -1,0 +1,142 @@
+/* DEFINIZIONE VARIABILI COLORI */
+:host {
+  --fanta-primary: #1a4a3e; /* Verde scuro (Colore Maglia/Sfondo) */
+  --fanta-accent: #b4e636;  /* Lime acceso (Bottoni/Dettagli) */
+  --fanta-bg: #f4f6f8;      /* Grigio chiarissimo (Sfondo pagina) */
+  --text-dark: #2c3e50;
+}
+
+
+/* --- NAVBAR --- */
+.navbar-custom {
+  background-color: var(--fanta-primary);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  font-weight: 800; /* Molto grassetto */
+  color: var(--fanta-accent) !important;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+}
+
+.nav-link.active, .nav-link:hover {
+  color: #fff !important;
+}
+
+/* Bottoni speciali */
+.btn-accent {
+  background-color: var(--fanta-accent);
+  color: var(--fanta-primary);
+  font-weight: bold;
+  border: none;
+  transition: all 0.3s;
+}
+
+.btn-accent:hover {
+  background-color: #a3d628; /* Un po' più scuro all'hover */
+  transform: scale(1.05); /* Leggero ingrandimento */
+}
+
+/* --- HERO SECTION (BANNERS) --- */
+.hero-banner {
+  /* Gradiente diagonale verde */
+  background: linear-gradient(135deg, var(--fanta-primary) 0%, #2a7a66 100%);
+  color: white;
+  padding: 4rem 1rem;
+  border-radius: 0 0 30px 30px; /* Arrotondato solo sotto */
+  margin-bottom: 2.5rem;
+  box-shadow: 0 10px 20px rgba(26, 74, 62, 0.2);
+}
+
+/* --- CARDS NOTIZIE --- */
+.news-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: white;
+}
+
+.news-card:hover {
+  transform: translateY(-5px); /* Si alza quando passi il mouse */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.news-img-placeholder {
+  background-color: #e9ecef;
+  height: 100%;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #adb5bd;
+  font-size: 3rem;
+}
+
+/* --- TABELLA STATISTICHE --- */
+.stats-box {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.stats-header {
+  background-color: var(--fanta-primary);
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Selettore Tab (Classifica/Marcatori) */
+.tab-selector {
+  cursor: pointer;
+  padding: 12px;
+  font-weight: 600;
+  color: #6c757d;
+  text-align: center;
+  width: 50%;
+  border-bottom: 3px solid transparent;
+  transition: color 0.3s;
+}
+
+.tab-selector:hover {
+  background-color: #f8f9fa;
+}
+
+.tab-selector.active {
+  color: var(--fanta-primary);
+  border-bottom: 3px solid var(--fanta-primary);
+}
+
+.btn-probabili {
+  color: #2c3e50;
+  border: 2px solid #2c3e50; /* Bordo un po' più spesso */
+  /* Questa riga è magica: rende il cambio colore morbido (0.3 secondi) */
+  transition: all 0.3s ease-in-out;
+}
+
+/* 2. Lo stato HOVER (quando il mouse è sopra) */
+.btn-probabili:hover {
+  background-color: #4ca1af; /* Lo sfondo diventa azzurro */
+  color: white;              /* Il testo diventa bianco per contrasto */
+  border-color: #4ca1af;     /* Il bordo resta azzurro */
+  box-shadow: 0 5px 15px rgba(76, 161, 175, 0.4) !important; /* Un'ombra azzurra luminosa */
+}
+
+.btn-zoom {
+  transition: transform 0.2s ease-in-out; /* Rende il movimento fluido e non "a scatti" */
+}
+
+/* Quando passi sopra col mouse */
+.btn-zoom:hover {
+  transform: scale(1.1); /* Ingrandisce del 10% */
+  font-weight: bold;     /* Opzionale: rende il testo un po' più cicciotto */
+}

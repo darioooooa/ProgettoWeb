@@ -1,0 +1,12 @@
+.hover-scale {
+  /* La transizione è ora molto più leggibile */
+  transition: transform 0.3s ease-in-out;
+  display: inline-block;
+}
+
+.hover-scale:hover {
+  /* 1.1 = ingrandimento */
+  transform: scale(1.1);
+  /* Manteniamo l'ombra per il pop-up visivo */
+  text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}

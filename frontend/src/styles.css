@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importiamo il font su tutta l'app */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f6f8; /* Un grigio chiarissimo di sfondo base */
+}
+
+/* Correzione per i link: togliamo la sottolineatura brutta di default */
+a {
+  text-decoration: none;
+}
