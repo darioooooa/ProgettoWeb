@@ -1,0 +1,110 @@
+/* --- COLORI BASE --- */
+.text-fanta-dark { color: #0f3e33; }
+.text-fanta-lime { color: #a3cf0d; }
+.bg-light { background-color: #f8f9fa !important; }
+
+/* --- SFONDO HERO (La parte verde curva in alto) --- */
+.hero-bg {
+  height: 450px; /* Altezza sfondo verde */
+  background-color: #0f3e33;
+  /* Gradiente leggero */
+  background: linear-gradient(135deg, #0f3e33 0%, #082a22 100%);
+  /* La curva magica */
+  border-bottom-left-radius: 50% 40px;
+  border-bottom-right-radius: 50% 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+/* Ombra testo titolo */
+.text-shadow {
+  text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* --- CARD CENTRALE FLUTTUANTE --- */
+.floating-card {
+  max-width: 650px;
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1); /* Ombra morbida */
+  z-index: 10;
+  position: relative;
+  /* Margine aumentato per non coprire il titolo */
+  margin-top: 160px;
+  margin-bottom: 50px;
+}
+
+/* --- ICONA TROFEO --- */
+.icon-wrapper {
+  width: 90px;
+  height: 90px;
+  background-color: #a3cf0d;
+  color: white;
+  border: 5px solid white; /* Bordo bianco per staccare dallo sfondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: -45px; /* Tira su l'icona fuori dalla card */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Icone grandi dentro l'input */
+.fs-4 { font-size: 1.5rem !important; }
+
+/* --- INPUT STYLING --- */
+.input-group-text {
+  background: white;
+  border-right: none;
+  color: #a3cf0d;
+}
+
+.form-control, .form-select {
+  border-left: none;
+  box-shadow: none; /* Toglie l'ombra blu standard */
+}
+
+.input-group {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+/* Effetto focus verde quando clicchi */
+.input-group:focus-within {
+  border-color: #a3cf0d;
+  box-shadow: 0 0 0 4px rgba(163, 207, 13, 0.1);
+  transform: translateY(-2px);
+}
+
+/* --- BOTTONE --- */
+.btn-lime {
+  background-color: #a3cf0d;
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+
+.btn-lime:hover {
+  background-color: #0f3e33;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(15, 62, 51, 0.3);
+}
+
+/* --- EFFETTI LINK --- */
+.nav-link-hover:hover {
+  opacity: 0.8;
+  transform: translateX(-3px);
+  transition: all 0.2s;
+}

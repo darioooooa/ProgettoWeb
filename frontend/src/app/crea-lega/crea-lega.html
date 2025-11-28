@@ -1,0 +1,81 @@
+<div class="page-wrapper min-vh-100 bg-light position-relative overflow-hidden">
+
+  <!-- 1. HERO SECTION (Sfondo Verde in Alto) -->
+  <div class="hero-bg">
+    <!-- BARRA DI NAVIGAZIONE SUPERIORE -->
+    <div class="container pt-4 px-4">
+
+      <!-- Link Torna alla Home -->
+      <a routerLink="/" class="text-white text-decoration-none fw-bold d-flex align-items-center nav-link-hover" style="width: fit-content; cursor: pointer;">
+        <i class="bi bi-arrow-left me-2 fs-5"></i> Torna alla Home
+      </a>
+
+    </div>
+
+    <!-- TITOLO -->
+    <div class="container text-center mt-4 pt-2">
+      <h1 class="text-white display-4 fw-bold text-shadow">
+        Fonda la tua lega
+      </h1>
+    </div>
+  </div>
+
+  <!-- 2. CARD BIANCA CENTRALE -->
+  <div class="container d-flex justify-content-center px-3">
+    <div class="card floating-card p-4 p-md-5">
+
+      <!-- Icona Trofeo -->
+      <div class="icon-wrapper">
+        <i class="bi bi-trophy-fill fs-1"></i>
+      </div>
+
+      <div class="text-center mt-4 mb-5">
+        <h2 class="fw-bold text-fanta-dark">Impostazioni Lega</h2>
+        <p class="text-secondary">Decidi le regole, tu sei il Presidente.</p>
+      </div>
+
+      <form>
+        <!-- Input Nome Lega -->
+        <div class="mb-4">
+          <label class="fw-bold text-secondary small text-uppercase mb-1">Nome del Campionato</label>
+          <div class="input-group input-group-lg">
+            <span class="input-group-text"><i class="bi bi-award fs-4"></i></span>
+            <input type="text" class="form-control fw-bold text-fanta-dark" placeholder="Es. Serie A dei Disperati">
+          </div>
+        </div>
+
+        <!-- Input Budget -->
+        <div class="mb-4">
+          <label class="fw-bold text-secondary small text-uppercase mb-1">Budget Iniziale</label>
+          <div class="input-group input-group-lg">
+            <span class="input-group-text"><i class="bi bi-cash-stack fs-4"></i></span>
+            <select class="form-select fw-bold text-secondary" style="cursor: pointer;">
+              <option selected>500 Crediti </option>
+              <option>250 Crediti </option>
+              <option>1000 Crediti</option>
+              <option>Modalità Listone</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Input Nome Squadra Admin -->
+        <div class="mb-5">
+          <label class="fw-bold text-secondary small text-uppercase mb-1">Nome della tua Squadra</label>
+          <div class="input-group input-group-lg">
+            <span class="input-group-text"><i class="bi bi-shield-shaded fs-4"></i></span>
+            <input type="text" class="form-control fw-bold text-fanta-dark" placeholder="Es. Admin FC">
+          </div>
+        </div>
+
+        <!-- Bottone Conferma -->
+        <div class="d-grid">
+          <button type="button" class="btn btn-lime text-uppercase">
+            Crea Lega e Inizia
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>
