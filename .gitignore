@@ -22,9 +22,12 @@ bin/
 *.iws
 *.iml
 *.ipr
+target/
 out/
+*.class
 !**/src/main/**/out/
 !**/src/test/**/out/
+*.list
 
 ### NetBeans ###
 /nbproject/private/
