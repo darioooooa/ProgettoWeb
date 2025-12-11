@@ -106,7 +106,7 @@ public class UtenteDaoJDBC implements IUtenteDAO {
     }
 
     @Override
-    public void updateUtente(UtenteDTO utente) {
+    public UtenteDTO updateUtente(UtenteDTO utente) {
         String query = "UPDATE utenti SET nome=?, cognome=?, email=?, password=? WHERE id=?";
         try (PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setString(1, utente.getNome());
@@ -115,6 +115,8 @@ public class UtenteDaoJDBC implements IUtenteDAO {
             ps.setString(4, utente.getPassword());
             ps.setLong(5, utente.getId());
             ps.executeUpdate();
+
+            return utente;
         } catch (SQLException e) {
             throw new RuntimeException("Errore aggiornamento utente", e);
         }

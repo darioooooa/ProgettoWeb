@@ -14,7 +14,7 @@ public interface IUtenteDAO {
     UtenteDTO getUtenteByEmail(String email);
 
     // Update
-    void updateUtente(UtenteDTO utente);
+    UtenteDTO updateUtente(UtenteDTO utente);
 
     // Delete
     void deleteUtente(Long id);
