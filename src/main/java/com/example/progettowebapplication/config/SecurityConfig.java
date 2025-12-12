@@ -30,12 +30,16 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         // Registrazione pubblica
-                        .requestMatchers( "/utente/register").permitAll()
+                        .requestMatchers("/utente/register").permitAll()
                         // Richiesta autenticazione per tutte le altre richieste
                         .anyRequest().authenticated()
                 )
-                .httpBasic(Customizer.withDefaults());
-
+                .httpBasic(basic -> basic
+                        // Questo pezzo impedisce al browser di aprire il popup nativo sugli errori 401
+                        .authenticationEntryPoint((request, response, authException) -> {
+                            response.sendError(HttpServletResponse.SC_UNAUTHORIZED, authException.getMessage());
+                        })
+                );
 
         return http.build();
     }

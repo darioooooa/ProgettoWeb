@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router'; // Serve solo questo per i link
+import { Component, OnInit } from '@angular/core'; // Aggiungi OnInit
+import { RouterModule } from '@angular/router';
+import { AuthService, UtenteDTO } from '../auth/auth.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterModule], // Niente CommonModule!
+  imports: [RouterModule],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
 export class Home {
-  // ... tutto il resto del codice identico a prima ...
-
+  // Variabile per salvare l'utente loggato (inizialmente null)
+  currentUser: UtenteDTO | null = null;
   tabSelezionata: string = 'classifica';
 
   notizie = [
@@ -28,6 +29,27 @@ export class Home {
     { nome: 'Lautaro', squadra: 'INT', gol: 12 },
     { nome: 'Osimhen', squadra: 'NAP', gol: 10 }
   ];
+  // INIEZIONE DEL SERVICE
+  constructor(private authService: AuthService) {}
+
+  ngOnInit() {
+    // Chiediamo al backend: "Sono loggato?"
+    this.authService.checkAuthStatus().subscribe(isLogged => {
+      if (isLogged) {
+        // Se sì, prendiamo i dati dell'utente (nome, cognome, ecc)
+        this.currentUser = this.authService.getUserSnapshot();
+      } else {
+        this.currentUser = null;
+      }
+    });
+  }
+
+  logout() {
+    this.authService.logout().subscribe(() => {
+      this.currentUser = null; // Pulisce la variabile, la navbar tornerà come prima
+      // Opzionale: window.location.reload(); per pulire tutto
+    });
+  }
 
   setTab(tab: string) {
     this.tabSelezionata = tab;

@@ -3,7 +3,7 @@
   <div class="row g-0 min-vh-100">
 
     <div class="col-lg-8 d-none d-lg-block position-relative"
-          style="background-image: url('/assets/McTominay.jpg');
+         style="background-image: url('/assets/McTominay.jpg');
           background-size: cover;
           background-position:center;">
       <a routerLink="/" class="text-white position-absolute top-0 start-0 m-4 fw-bold hover-scale"
@@ -30,9 +30,7 @@
 
         <div class="text-center">
           <i class="bi bi-person-plus-fill display-4 mb-3 d-block" style="color: #b4e636;"></i>
-
           <h2 class="fw-bold" style="color: #1a4a3e;">Crea Account</h2>
-
           <p>Inserisci i tuoi dati per scendere in campo.</p>
         </div>
 
@@ -73,12 +71,23 @@
             </div>
           </div>
 
-          <div class="form-floating mb-3">
+          @if (messaggioErrore) {
+            <div class="alert alert-danger text-center p-2 mb-3" role="alert">
+              <i class="bi bi-exclamation-triangle-fill me-2"></i>
+              {{ messaggioErrore }}
+            </div>
+          }
 
-          </div>
-          <button type="submit" class="btn btn-lg w-75 d-block mx-auto fw-bold mb-4 shadow-sm hover-scale"
+          <button type="submit"
+                  [disabled]="isLoading"
+                  class="btn btn-lg w-75 d-block mx-auto fw-bold mb-4 shadow-sm hover-scale"
                   style="background-color: #b4e636; color: #1a4a3e;">
-            REGISTRATI
+
+            @if (isLoading) {
+              <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+            }
+
+            {{ isLoading ? 'REGISTRAZIONE...' : 'REGISTRATI' }}
           </button>
 
           <div class="text-center">
@@ -92,5 +101,5 @@
       </div>
 
     </div>
-</div>
+  </div>
 </div>

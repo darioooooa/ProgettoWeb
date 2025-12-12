@@ -16,9 +16,21 @@
             <a class="nav-link btn-zoom" routerLink="/crea-lega" style="cursor: pointer;"><b> CREA </b></a>
           </li> </ul>
 
-        <div class="d-flex gap-2">
-          <button class="btn btn-outline-light px-3 btn-zoom" routerLink="/login">Accedi</button>
-          <button class="btn btn-accent px-3 btn-zoom" routerLink="/register">Registrati</button>
+        <div class="d-flex gap-2 align-items-center" style="color: white">
+
+          @if (currentUser) {
+
+
+                <b>{{ currentUser.nome }}</b>
+                <i class="bi bi-person fs-4"></i>
+
+          }
+
+          @else {
+            <button class="btn btn-outline-light px-3 btn-zoom" routerLink="/login">Accedi</button>
+            <button class="btn btn-accent px-3 btn-zoom" routerLink="/register">Registrati</button>
+          }
+
         </div>
       </div>
     </div>
